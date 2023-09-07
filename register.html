@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="w">
+        <div class="registerarea">
+            <h3>
+                新規登録
+                <div class="login">アカウントお持ちの方、<a href="/login.html">ログイン</a>へ</div>
+            </h3>
+            <div class="reg_form">
+                <form action="">
+                    <ul>
+                        <li>
+                            <label for="">ユーザー名：</label>
+                            <input type="text" class="inp">
+                            <span class="error"><i class="error_icon"></i>既に使われています</span>
+                        </li>
+                        <li>
+                            <label for="">メールアドレス：</label>
+                            <input type="text" class="inp">
+                            <span class="success"><i class="success_icon"></i>使えます</span>
+                        </li>
+                        <li>
+                            <label for="">パスワード：</label>
+                            <input type="password" class="inp">
+                            <span class="error"><i class="error_icon"></i>間違っています</span>
+                        </li>
+                        <li>
+                            <label for="">パスワード確認：</label>
+                            <input type="password" class="inp">
+                            <span class="error"><i class="error_icon"></i>間違っています</span>
+                        </li>
+                        <li class="agree">
+                            <input type="checkbox">同意
+                            <a href="#">《誓約書》</a>
+                        </li>
+                        <li>
+                            <input type="submit" value="登録" class="btn">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
