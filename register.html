@@ -22,37 +22,37 @@
                     <ul>
                         <li>
                             <label for="">ユーザー名：</label>
-                            <input type="text" class="inp">
-                            <span class="error"><i class="error_icon"></i>既に使われています</span>
+                            <input type="text" class="inp" id="username">
+                            <span class="username"></span>
                         </li>
                         <li>
                             <label for="">メールアドレス：</label>
-                            <input type="text" class="inp">
-                            <span class="success"><i class="success_icon"></i>使えます</span>
+                            <input type="text" class="inp" id="email">
+                            <span class="email"></span>
                         </li>
                         <li>
                             <label for="">パスワード：</label>
-                            <input type="password" class="inp">
-                            <span class="error"><i class="error_icon"></i>間違っています</span>
+                            <input type="password" class="inp" id="password">
+                            <span class="password"></span>
                         </li>
                         <li>
                             <label for="">パスワード確認：</label>
-                            <input type="password" class="inp">
-                            <span class="error"><i class="error_icon"></i>間違っています</span>
+                            <input type="password" class="inp" id="passwordtoo">
+                            <span class="passwordtoo"></span>
                         </li>
                         <li class="agree">
-                            <input type="checkbox">同意
+                            <input type="checkbox" class="checkbox"><i>&nbsp同意</i>
                             <a href="#">《誓約書》</a>
                         </li>
                         <li>
-                            <input type="submit" value="登録" class="btn">
+                            <input type="submit" value="登録" class="btn" disabled>
                         </li>
                     </ul>
                 </form>
             </div>
         </div>
     </div>
-    
+    <script src="/js/register.js"></script>
 </body>
 
 </html>

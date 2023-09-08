@@ -65,24 +65,8 @@
     color: red;
 }
 
-.error_icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url() no-repeat;
-    vertical-align: middle;
-}
-
 .success {
     color: green;
-}
-
-.success_icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url() no-repeat;
-    vertical-align: middle;
 }
 
 .safe {
@@ -118,11 +102,16 @@
     color: #1ba1e6;
 }
 
+.agree i {
+    vertical-align: bottom;
+}
+
 .btn {
     width: 200px;
     height: 34px;
     background-color: skyblue;
     font-size: 14px;
     color: black;
+    cursor: pointer;
 
 }
