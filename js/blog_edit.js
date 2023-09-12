@@ -1,17 +1,28 @@
-const imageUpload = document.getElementById("imageUpload");
-const imagePreview = document.getElementById("imagePreview");
 
-imageUpload.addEventListener("change", function () {
-    const file = this.files[0];
 
-    if (file) {
+const placeLabel = document.getElementById('placeLabel');
+const imageUpload = document.querySelector('.image-upload');
+
+
+placeLabel.addEventListener('click', () => {
+    imageUpload.click();
+});
+
+imageUpload.addEventListener('change', (event) => {
+    const imagePreview = document.getElementById('imagePreview');
+    const selectedImage = event.target.files[0];
+
+    if (selectedImage) {
         const reader = new FileReader();
-
-        reader.onload = function (e) {
-            imagePreview.src = e.target.result;
+        reader.onload = function () {
+            imagePreview.src = reader.result;
             imagePreview.style.display = "block";
+            placeLabel.style.display = 'none';
         };
-
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(selectedImage);
     }
 });
+
+document.querySelector('.image-preview').addEventListener('click', () => {
+    imageUpload.click();
+})

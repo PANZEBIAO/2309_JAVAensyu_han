@@ -101,7 +101,9 @@ checkbox.addEventListener("change", updateSubmitButton);
 function updateSubmitButton() {
     if (checkInputs() && checkbox.checked) {
         submitButton.disabled = false;
+        submitButton.style.backgroundColor = "skyblue"
     } else {
         submitButton.disabled = true;
+        submitButton.style.backgroundColor = "#ececec"
     }
 }
