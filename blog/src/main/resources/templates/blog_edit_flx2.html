@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/blog_list.css}">
+    <link rel="stylesheet" th:href="@{/css/flx.css}">
+</head>
+
+<body>
+    <div>
+        <section class="shortcut">
+            <div class="w">
+                <div class="fl">
+                </div>
+                <div class="fr">
+                    <ul>
+                        <li><a th:href="@{/user/blog/list}">Home</a></li>
+                        <li></li>
+                        <li><a th:href="@{/user/blog/register}" class="create">Create</a></li>
+                        <li></li>
+                        <li><a th:href="@{/user/blog/login">ログアウト</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="fix-box">
+            <h2>記事の追加が完了しました</h2>
+            <div class="menu-link">
+                <a th:href="@{/user/blog/list}">&nbsp;&nbsp;&nbsp;《&nbsp;メニューへ戻る</a>
+            </div>
+        </div>
+</body>
+
+</html>

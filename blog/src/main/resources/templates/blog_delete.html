@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/blog_delete.css}">
+    <title>ブログ管理</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- ナビ -->
+        <div class="aside">
+            <h2>My Blog !</h2>
+            <ul class="nav">
+                <li>
+                    <a th:href="@{/user/blog/delete/list}" class="active">
+                        <span>ブログ管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/user/blog/register}" >
+                        <span>ブログ投稿</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 編集画面 -->
+        <div class="main">
+            <!-- 名前とキャンセルボタン -->
+            <div class="top-nav">
+                <div class="nav-item">
+                    <span class="nick-name">[[${userName}]]</span>
+                    <a class="quit" th:href="@{/user/blog/list}">キャンセル</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="card">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>サムネ</th>
+                                <th>タイトル</th>
+                                <th>投稿時間</th>
+                                <th>操作</th>
+                                <th>削除</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-middle art-list">
+                            <tr th:each="blog:${blogList}">
+                                <td>
+                                    <img th:src="@{/blog_img/{imageName}(imageName=${blog.blogImage})}" alt="">
+                                </td>
+                                <td th:text="${blog.blogTitle}"></td>
+                                <td>
+                                    <span th:text="${#temporals.format(blog.registerDate, 'yyyy/MM/dd')}"></span>
+                                </td>
+                                <td>
+                                    <i class="bi bi-pencil-square edit"></i>
+                                    <a class="hensyu">編集</a>
+                                </td>
+                                
+                                <td>
+									<form th:action="@{/user/blog/delete}" method="post">
+	                                 	<input type="hidden" name="blogId" th:value="${blog.blogId}">	                                   
+	                                 	<button class="del">削除</button>
+									</form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <div class="editor hidden" th:each="blog:${blogList}">
+        <h1>ブログを編集</h1>
+        <form th:action="@{/user/blog/update}" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="blogId" th:value="${blog.blogId}">
+            <input type="text" class="title" name="blogTitle" placeholder="タイトル" th:value="${blog.blogTitle}">
+            <div>
+                <label>カテゴリー:</label>
+                <select class="category" id="category" name="categoryId">
+                    <option  th:selected = "${blog.categoryId == null}">選択</option>
+                    <option value="1"　th:selected = "${blog.categoryId == 1}">ゲーム</option>
+                    <option value="2"　th:selected = "${blog.categoryId == 2}">ライフ</option>
+                    <option value="3"　th:selected = "${blog.categoryId == 3}">グルメ</option>
+                    <option value="4"　th:selected = "${blog.categoryId == 4}">その他</option>
+                </select>
+            </div>
+            <div class="image-preview">
+                <label>サムネ：</label>
+                <img th:src="@{/blog_img/{imageName}(imageName=${blog.blogImage})}" id="imagePreview" class="img" name="blogImage">
+                <input type="file" class="image-upload" name="newBlogImage">
+            </div>
+            
+            <textarea class="content" name="blogDetail" placeholder="今日の喜びを分かち合おう！" th:text="${blog.blogDetail}"></textarea>
+            <button type="submit" class="submit">変更</button>
+            <button type="button" class="exit">キャンセル</button>
+        </form>
+    </div>
+    <script th:src="@{/js/blog_delete.js}"></script>
+</body>
+
+</html>

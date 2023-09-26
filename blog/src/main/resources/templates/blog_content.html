@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[${blog.blogTitle}]]</title>
+    <link rel="stylesheet" th:href="@{/css/blog_content.css}">
+</head>
+
+<body>
+    <header>
+        <h1 id="blogTitle" th:text="${blog.blogTitle}"></h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/user/blog/list}">Back to List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="blog-details">
+            <article>
+                <div class="blog-image">
+                    <img id="blogImage" th:src="@{/blog_img/{imageName}(imageName=${blog.blogImage})}" alt="Blog Image">
+                </div>
+                <div class="blog-meta">
+                    <div class="category" th:switch="${blog.categoryId}">
+								    <p th:case="1">ゲーム</p>
+								    <p th:case="2">ライフ</p>
+								    <p th:case="3">グルメ</p>
+								    <p th:case="4">その他</p>
+			        </div>
+                    <p class="register-date"><span id="blogRegisterDate" th:text="${#temporals.format(blog.registerDate,'yyyy/MM/dd')}"></span></p>
+                    <p>投稿者:[[${authorName}]]</p>
+                </div>
+                <p id="blogDetail" th:text="${blog.blogDetail}">
+                </p>
+
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

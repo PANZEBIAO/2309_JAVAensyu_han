@@ -1,0 +1,155 @@
+.sk {
+    border-left: 5px solid skyblue;
+    padding: 3px 0 0 14px;
+    left: 190px;
+    top: 40px;
+}
+
+.sk a:hover {
+    color: skyblue;
+}
+
+.line {
+    overflow: hidden;
+}
+
+.w {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.shortcut {
+    line-height: 31px;
+    height: 31px;
+    background-color: #f1f1f1;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+.fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+
+.fr ul li a:hover {
+    color: skyblue;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 20px auto;
+}
+
+.search {
+    width: 538px;
+    height: 36px;
+    border: 2px solid skyblue;
+}
+
+.search input {
+    float: left;
+    height: 32px;
+    width: 454px;
+    padding-left: 10px;
+}
+
+.search button {
+    float: right;
+    height: 33px;
+    width: 80px;
+    background-color: skyblue;
+    color: white;
+}
+
+
+.line {
+    width: 100%;
+    border-bottom: 2px solid skyblue;
+}
+
+.blog_list {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.blog_list ul {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.blog_list ul li {
+	margin-top: 20px;
+	width: 280px;
+	border: 1px solid black;
+}
+
+.blog-colum {
+    position: relative;
+    background-color: #fff;
+    width: 290px;
+    
+}
+
+.blog-colum img {
+    background-color: #fff;
+    border-bottom: 1px solid #594A4E;
+    width: 288px;
+    height: 203px;
+    vertical-align: top;
+    max-inline-size: 100%;
+    max-block-size: 100%;
+
+}
+
+.category {
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 80px;
+    background-color: #594A4E;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.category p {
+    text-align: center;
+    line-height: 35px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.colum__box {
+    padding: 1.2rem;
+    background-color: #fff;
+    color: #594A4E;
+    font-family: Kiwi Maru;
+}
+
+.colum__box p:nth-child(1) {
+    text-align: left;
+    font-size: 1rem;
+}
+
+.colum__box p:nth-child(2) {
+    text-align: left;
+    padding: 1.2rem 0;
+    font-size: 1.2rem;
+}

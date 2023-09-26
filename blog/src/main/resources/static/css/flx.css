@@ -1,0 +1,27 @@
+.fix-box {
+    width: 600px;
+    background-color: skyblue;
+    margin: 20px auto;
+    border-radius: 1rem;
+    padding: 1rem 0;
+}
+
+.fix-box h2 {
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.menu-link {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.menu-link a {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    color: black;
+    font-size: 1rem;
+    border-radius: 1rem;
+}

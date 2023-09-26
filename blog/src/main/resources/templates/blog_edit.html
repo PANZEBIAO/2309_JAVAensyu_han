@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Edit</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/blog_edit.css}">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- ナビ -->
+        <div class="aside">
+            <h2>My Blog !</h2>
+            <ul class="nav">
+                <li>
+                    <a th:href="@{/user/blog/delete/list}">
+                        <span>ブログ管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/user/blog/register}" class="active">
+                        <span>ブログ投稿</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 編集画面 -->
+        <div class="main">
+            <!-- 名前とキャンセルボタン -->
+            <div class="top-nav">
+                <div class="nav-item">
+                    <span class="nick-name">[[${userName}]]</span>
+                    <span class="quit"><a href="/user/blog/list">キャンセル</a></span>
+                </div>
+            </div>
+            <!-- Edit画面 -->
+            <div class="content">
+                <!-- Blog投稿 -->
+                <div class="card">
+                    <div class="title1">
+                        <h1>Blog投稿</h1>
+                    </div>
+                    <div class="body">
+                        <form th:action="@{/user/blog/register/process}" enctype="multipart/form-data" method="post">
+                            <input type="text" class="title" name="blogTitle" placeholder="タイトル">
+                            <div>
+                                <label>カテゴリー:</label>
+                                <select class="category" id="category" name="categoryId" >
+                                    <option value="" selected>選択</option>
+                                    <option value="1">ゲーム</option>
+                                    <option value="2">ライフ</option>
+                                    <option value="3">グルメ</option>
+                                    <option value="4">その他</option>
+                                </select>
+                            </div>
+                            <div class="image-preview">
+                                <label for="img">サムネ：</label>
+                                <label for="img" class="place" id="placeLabel">+</label>
+                                <img id="imagePreview" class="img">
+                            </div>
+                            <input type="file" class="image-upload" name="blogImage">
+                            <label>詳細：</label>
+                            <textarea class="content" name="blogDetail" placeholder="今日の喜びを分かち合おう！" ></textarea>
+                            <button class="submit">投稿</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/blog_edit.js"></script>
+</body>
+
+</html>

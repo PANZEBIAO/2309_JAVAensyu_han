@@ -1,0 +1,74 @@
+/* ナビ */
+.aside {
+    width: 200px;
+    background-color: skyblue;
+    padding-top: 40px;
+    color: white;
+    text-align: center;
+}
+
+.aside h2 {
+    text-align: center;
+    color: blue;
+}
+
+.nav {
+    padding-left: 0;
+}
+
+.nav li {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.nav li a.active {
+    color: yellow;
+}
+
+/* ヘッダー */
+.main {
+    flex: 1;
+    background-color: white;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #ebeef5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.top-nav {
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 40px;
+    background-color: #fff;
+}
+
+.quit {
+    cursor: pointer;
+    color: skyblue;
+}
+
+.quit:hover {
+    color: #3184d7;
+}
+
+
+.nav-item span {
+    cursor: pointer;
+}
+
+.nav-item span:last-of-type {
+    margin-left: 20px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog!</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/blog_list.css}">
+</head>
+
+<body>
+    <div>
+        <section class="shortcut">
+            <div class="w">
+                <div class="fl">
+                    いっらしゃいませ [[${userName}]]
+                </div>
+                <div class="fr">
+                    <ul>
+                        <li><a th:href="@{/user/blog/list}">Home</a></li>
+                        <li></li>
+                        <li><a th:href="@{/user/blog/register}" class="create">Create</a></li>
+                        <li></li>
+                        <li><a th:href="@{/user/login}">LogOut</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <header class="header w">
+            <div class="sk">
+                <h1><a th:href="@{/user/blog/list}">Blog</a></h1>
+            </div>
+            <div class="search">
+				<form method="get" th:action="@{/user/blog/search}" id="search-form">
+                	<input type="search" placeholder="ブログ内容を検索..." name="searchTerm">
+                	<button type="submit">検索</button>
+				</form>
+            </div>
+        </header>
+        <nav class="line">
+        </nav>
+		<div class="blog_list">
+			<ul>
+				<li  th:each="blog : ${blogList}">
+			        <div class="blog-list">
+			            <a th:href="@{/user/blog/content/{blogId}(blogId=${blog.blogId})}" class="blog-colum">
+			                <div class="category" th:switch="${blog.categoryId}">
+								    <p th:case="1">ゲーム</p>
+								    <p th:case="2">ライフ</p>
+								    <p th:case="3">グルメ</p>
+								    <p th:case="4">その他</p>
+			                </div>
+			                <img th:src="@{/blog_img/{imageName}(imageName=${blog.blogImage})}" alt="">
+			                <div class="colum__box">
+			                    <p th:text="${#temporals.format(blog.registerDate,'yyyy/MM/dd')}"></p>
+			                    <p th:text="${blog.blogTitle}"></p>
+			                </div>
+			            </a>
+			        </div>
+				</li>
+			</ul>       
+		</div>
+    </div>
+</body>
+
+</html>
